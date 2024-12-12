@@ -69,9 +69,9 @@ const aliens = {
         'homeworld': 'unknown',
         'features':'unknown',
         'interestingFact': 'unknown' ,
-        'notableExamples' : "unknown",
+        'notableExamples' : 'unknown',
         'image': 'unknown'
-    }
+    },
 
 
 }
@@ -92,7 +92,7 @@ app.get('/api/:alienName', (request, response)=>{
         response.json(aliens[aliensName])
         console.log('working')
     }else{
-        response.json(aliens[unknown])
+        response.json(aliens['unknown'])
     }
 
 })
