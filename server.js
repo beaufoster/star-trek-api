@@ -81,7 +81,7 @@ app.get('/api/:alienName', (request, response)=>{
         response.json(aliens[aliensName])
         console.log('working')
     }else{
-        response.json(aliens['humans'])
+        response.json('Correctly enter a species')
     }
 
 })
