@@ -83,6 +83,7 @@ app.get('/', (require, response)=>{
 })
 
 app.get('/api', (request, response)=>{
+    console.log(aliens)
     response.json(aliens)
 })
 
