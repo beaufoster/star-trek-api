@@ -90,18 +90,25 @@ MongoClient.connect(connectionString)
     })
 
     app.get('/api', (request, response)=>{
-        console.log(aliens)
-        response.json(aliens)
+
+        infoCollection.find({}).toArray()
+        .then(results => {
+            console.log(results)
+            response.json(results)
+        })
+
+
     })
+
 
     app.get('/api/:alienName', (request, response)=>{
         const aliensName = request.params.alienName.toLowerCase()
-    if(aliens[aliensName]){
-        response.json(aliens[aliensName])
-        console.log('working')
-    }else{
-        response.json(aliens['unknown'])
-    }
+
+        infoCollection.find({name: aliensName}).toArray()
+        .then(results => {
+            console.log(results)
+            response.json(results)
+        })
     })
 
 })
