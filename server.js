@@ -109,6 +109,7 @@ MongoClient.connect(connectionString)
             console.log(results)
             response.json(results)
         })
+        .catch(error=> console.error(error))
     })
 
 })
